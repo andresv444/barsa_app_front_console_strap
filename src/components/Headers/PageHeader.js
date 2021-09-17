@@ -24,7 +24,7 @@ function ProfilePageHeader({ title, subtitle, headline }) {
   });
   return (
     <>
-      <div className="page-header clear-filter page-header-small" filter-color="blue">
+      <div className="page-header clear-filter page-header-small" >
         <div
           className="page-header-image"
           style={{

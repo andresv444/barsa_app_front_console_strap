@@ -67,15 +67,15 @@ function Index() {
             {/* Text and image of app */}
             <div style ={{backgroundColor:"#f0f0f0"}}>
             <Container className="background-1" >
-              <Row className="my-5 d-flex justify-content-center">
+              <Row className="py-4 d-flex justify-content-center">
                 <Col xs="6" md = '6' sm = "12">
                   {/* text and title */}
-                  <div className="text-center">
+                  <div className="text-center" >
                   {!!data.downloadTextBlock && (
                     <TextBlock
                       id={data.downloadTextBlock.id}
                       title={data.downloadTextBlock.title}
-                      titlecolor={data.downloadTextBlock.titlecolor}
+                      titlecolor={'blacks'}
                       subtitle={data.downloadTextBlock.subtitle}
                       content={data.downloadTextBlock.content}
                       buttons={data.downloadTextBlock.buttons}
@@ -140,7 +140,7 @@ function Index() {
                     <TextBlock
                       id={data.downloadTextBlock.id}
                       title='You want it? We got it.'
-                      titlecolor={data.downloadTextBlock.titlecolor}
+                      titlecolor={'black1'}
                       subtitle='WE HAVE EVERY LICOR DO YOU WANT'
                       content="Rosé? Check. Tito's? Check. That one killer pale ale you tried the other day? Check. We have the biggest selection for on-demand alcohol in the history of ever."
                       buttons={data.downloadTextBlock.buttons}
@@ -171,6 +171,8 @@ function Index() {
             </div>
 
             {/* services in cards */}
+            <div className="my-5 d-flex justify-content-center">
+              {/* <h1>Hello World</h1> */}
             <Row className="my-5 d-flex justify-content-center">
               {!!data.services &&
                 Array.isArray(data.services) &&
@@ -190,16 +192,18 @@ function Index() {
                   </Card>
                 ))}
             </Row>
-
+            </div>
             {/* Text of the Download the App */}
-            {/* <Row className="my-5 pb-5">
+            <div style ={{backgroundColor:"#f0f0f0"}} >
+            <Container >
+            <Row className="my-5 pb-5">
               <Col className="my-5 pb-5">
                 <div className="text-center">
                   {!!data.featured && (
                       <TextBlock
                         id={data.featured.id}
                         title={data.featured.title}
-                        titlecolor={data.featured.titlecolor}
+                        titlecolor='danger'
                         subtitle={data.featured.subtitle}
                         content={data.featured.content}
                         // buttons={data.featured.buttons}
@@ -207,8 +211,9 @@ function Index() {
                     )}
                 </div>
               </Col>
-            </Row> */}
-
+            </Row>
+            </Container>
+            </div>
             {/* Image of the table
             <Row className="className=my-5 d-flex justify-content-center">
               <Images />

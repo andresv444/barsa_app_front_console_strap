@@ -36,14 +36,20 @@ function IndexHeader({ image }) {
           ></div>
         )}
         <Container>
-          <div className="content-center brand">
-            <img
+          <div className="content-center brand" style = {{display:'flex'}}>
+            {/* <img
               alt="..."
               className="n-logo"
               src={require('assets/img/logo.png').default}
-            ></img>
-            <h1 className="title text-primary">BAR-SA</h1>
-            <h3>COLECCIÓN TOP DRINKS</h3>
+            ></img> */}
+            <div style = {{background:"rgba(255,255,255,0.0)", width:'75%', margin:'auto', borderRadius: '5%'} }>
+        
+              <div style= {{opacity:'1'}}>
+                  <h1 className="title text-black" style = {{color: "#fff"}}>BAR-SA</h1>
+                  <h3>COLECCIÓN TOP DRINKS</h3>
+              </div>
+            </div>
+            
           </div>
         </Container>
       </div>

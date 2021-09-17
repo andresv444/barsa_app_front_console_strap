@@ -11,32 +11,26 @@ import {
   Container
 } from 'reactstrap';
 
-
-
-function IndexNavbar() {
+function PagesNavbar() {
   const hash = window.location.hash;
-  const [navbarColor, setNavbarColor] = React.useState('');
-  // const [navbarColor, setNavbarColor] = React.useState('danger');
+  const [navbarColor, setNavbarColor] = React.useState('navbar-transparent');
   const [collapseOpen, setCollapseOpen] = React.useState(false);
-  // setNavbarColor('');
-
-  // React.useEffect(() => {
-  //   const updateNavbarColor = () => {
-  //     if (document.documentElement.scrollTop > 1 || document.body.scrollTop > 1) {
-  //       setNavbarColor('');
-  //     } else if (
-  //       document.documentElement.scrollTop < 400 ||
-  //       document.body.scrollTop < 400
-  //     ) {
-  //       setNavbarColor('navbar-transparent');
-  //       // setNavbarColor('danger');
-  //     }
-  //   };
-  //   window.addEventListener('scroll', updateNavbarColor);
-  //   return function cleanup() {
-  //     window.removeEventListener('scroll', updateNavbarColor);
-  //   };
-  // });
+  React.useEffect(() => {
+    const updateNavbarColor = () => {
+      if (document.documentElement.scrollTop > 399 || document.body.scrollTop > 399) {
+        setNavbarColor('');
+      } else if (
+        document.documentElement.scrollTop < 400 ||
+        document.body.scrollTop < 400
+      ) {
+        setNavbarColor('navbar-transparent');
+      }
+    };
+    window.addEventListener('scroll', updateNavbarColor);
+    return function cleanup() {
+      window.removeEventListener('scroll', updateNavbarColor);
+    };
+  });
   return (
     <>
       {collapseOpen ? (
@@ -48,8 +42,7 @@ function IndexNavbar() {
           }}
         />
       ) : null}
-      
-      <Navbar className={'fixed-top ' + navbarColor} expand="lg" color="light" light = {true} >
+      <Navbar className={'fixed-top ' + navbarColor} color="light" expand="lg">
         <Container>
           <div className="navbar-translate">
             <NavbarBrand href="/" id="navbar-brand">
@@ -58,7 +51,7 @@ function IndexNavbar() {
                 src={process.env.PUBLIC_URL + '/logo.png'}
                 alt="bar-sa-logo"
               />
-              {/* Now UI Kit React */}
+            
             </NavbarBrand>
             <button
               className="navbar-toggler navbar-toggler"
@@ -74,46 +67,33 @@ function IndexNavbar() {
               <span className="navbar-toggler-bar bottom-bar"></span>
             </button>
           </div>
-
-
           <Collapse className="justify-content-end" isOpen={collapseOpen} navbar>
-
             <Nav navbar>
-              {/* //Home   */}
               <NavItem active={!!hash && hash === '#/index'}>
                 <NavLink to="/index" tag={Link}>
-                  Inicio
+                  INICIO
                 </NavLink>
               </NavItem>
-
-              {/* //About Us */}
               <NavItem active={!!hash && hash === '#/about'}>
                 <NavLink to="/about" tag={Link}>
-                  Sobre Nosotros
+                  SOBRE NOSOTROS
                 </NavLink>
               </NavItem>
-
-              
               <NavItem active={!!hash && hash === '#/faq'}>
                 <NavLink to="/faq" tag={Link}>
-                  preguntas frecuentes
+                  PREGUNTAS FRECUENTES
                 </NavLink>
               </NavItem>
-              
-              {/* Contact Us */}
               <NavItem active={!!hash && hash === '#/contact'}>
                 <NavLink to="/contact" tag={Link}>
-                  contactanos
+                  CONTACTANOS
                 </NavLink>
               </NavItem>
-
-              {/* //Terms and Conditions */}
               <NavItem active={!!hash && hash === '#/terms-and-conditions'}>
                 <NavLink to="/terms-and-conditions" tag={Link}>
-                  terminos y condiciones
+                  TERMINOS Y CONDICIONES
                 </NavLink>
               </NavItem>
-
             </Nav>
           </Collapse>
         </Container>
@@ -122,4 +102,4 @@ function IndexNavbar() {
   );
 }
 
-export default IndexNavbar;
+export default PagesNavbar;
