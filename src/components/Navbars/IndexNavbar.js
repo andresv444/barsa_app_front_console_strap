@@ -15,7 +15,8 @@ import {
 
 function IndexNavbar() {
   const hash = window.location.hash;
-  const [navbarColor, setNavbarColor] = React.useState('navbar-transparent');
+  // const [navbarColor, setNavbarColor] = React.useState('navbar-transparent');
+  const [navbarColor, setNavbarColor] = React.useState('danger');
   const [collapseOpen, setCollapseOpen] = React.useState(false);
   React.useEffect(() => {
     const updateNavbarColor = () => {
@@ -26,6 +27,7 @@ function IndexNavbar() {
         document.body.scrollTop < 400
       ) {
         setNavbarColor('navbar-transparent');
+        // setNavbarColor('danger');
       }
     };
     window.addEventListener('scroll', updateNavbarColor);
@@ -45,7 +47,7 @@ function IndexNavbar() {
         />
       ) : null}
       
-      <Navbar className={'fixed-top ' + navbarColor} expand="lg" color="dark" >
+      <Navbar className={'fixed-top ' + navbarColor} expand="lg" color="light" light = {true} >
         <Container>
           <div className="navbar-translate">
             <NavbarBrand href="/" id="navbar-brand">

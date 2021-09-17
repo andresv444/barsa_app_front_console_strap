@@ -27,7 +27,7 @@ function IndexHeader({ image }) {
 
   return (
     <>
-      <div className="page-header clear-filter" filter-color="blue">
+      <div className="page-header clear-filter" filter-color= 'coffe' >
         {!!image && (
           <div
             className="page-header-image"
@@ -42,7 +42,7 @@ function IndexHeader({ image }) {
               className="n-logo"
               src={require('assets/img/logo.png').default}
             ></img>
-            <h1 className="title text-danger">BAR-SA</h1>
+            <h1 className="title text-primary">BAR-SA</h1>
             <h3>COLECCIÓN TOP DRINKS</h3>
           </div>
         </Container>

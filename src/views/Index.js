@@ -13,6 +13,8 @@ import Loading from 'components/Loading/Loading';
 import TextBlock from 'components/TextBlock/TextBlock';
 import { Card, CardBody, CardText, CardTitle, Col, Container, Row } from 'reactstrap';
 
+import "../assets/css/index.css"
+
 function Index() {
   const [data, setData] = React.useState({});
   const [loading, setLoading] = React.useState(true);
@@ -56,26 +58,29 @@ function Index() {
       <IndexNavbar />
       <div className="wrapper">
         {/* Image Background bar */}
-        <IndexHeader image={!!data.coverImage ? data.coverImage.url : null} />
+        {/* <IndexHeader image={!!data.coverImage ? data.coverImage.url : null} /> */}
+        <IndexHeader image='https://images.pexels.com/photos/1283219/pexels-photo-1283219.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260' />
 
-        <Container className="main">
+        <div className="main" id="mainDiv">
           <div>
+            {/* FIRST */}
             {/* Text and image of app */}
-            <Container className="background-1" style ={{backgroundColor:"yellow"}}>
+            <div style ={{backgroundColor:"#f0f0f0"}}>
+            <Container className="background-1" >
               <Row className="my-5 d-flex justify-content-center">
-                <Col xs="6">
+                <Col xs="6" md = '6' sm = "12">
                   {/* text and title */}
                   <div className="text-center">
-                    {!!data.featured && (
-                      <TextBlock
-                        id={data.featured.id}
-                        title={data.featured.title}
-                        titlecolor={data.featured.titlecolor}
-                        subtitle={data.featured.subtitle}
-                        content={data.featured.content}
-                        // buttons={data.featured.buttons}
-                      />
-                    )}
+                  {!!data.downloadTextBlock && (
+                    <TextBlock
+                      id={data.downloadTextBlock.id}
+                      title={data.downloadTextBlock.title}
+                      titlecolor={data.downloadTextBlock.titlecolor}
+                      subtitle={data.downloadTextBlock.subtitle}
+                      content={data.downloadTextBlock.content}
+                      buttons={data.downloadTextBlock.buttons}
+                    />
+                  )}
 
                     {/* button of download */}
                     <Row className="my-5 d-flex justify-content-center">
@@ -101,27 +106,69 @@ function Index() {
                   </div>
                 </Col>
                 {/* Image of the app */}
-                <Col xs="6">
+                <Col xs="6" md = '6' sm = "12">
                   <div>
                     <img
-                      src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/drizly-app-1579716002.jpg?crop=1xw:1xh;center,top&resize=768:*"
+                      src="images/iphone-removebg.png"
                       alt=""
                     />
                   </div>
                 </Col>
               </Row>
             </Container>
+            </div>
 
+            {/* SECOND */}
+            <div >
+            <Container className="background-1" >
+
+              {/* Image of the app */}
+              <Row className="my-5 d-flex justify-content-center">
+                <Col xs="6" md = '6' sm = "12">
+                  <div>
+                    <img
+                      src="https://products2.imgix.drizly.com/homepage_you_want_it_we_got_it.png?auto=format%2Ccompress&ch=Width%2CDPR&fm=png&q=75&w=1340"
+                      alt=""
+                    />
+                  </div>
+                </Col>
+                
+                {/* text and title */}
+                <Col xs="6" md = '6' sm = "12">
+                  <div className="text-center">
+                  {!!data.downloadTextBlock && (
+                    <TextBlock
+                      id={data.downloadTextBlock.id}
+                      title='You want it? We got it.'
+                      titlecolor={data.downloadTextBlock.titlecolor}
+                      subtitle='WE HAVE EVERY LICOR DO YOU WANT'
+                      content="Rosé? Check. Tito's? Check. That one killer pale ale you tried the other day? Check. We have the biggest selection for on-demand alcohol in the history of ever."
+                      buttons={data.downloadTextBlock.buttons}
+                    />
+                  )}
+                  </div>
+                </Col>
+                
+              </Row>
+            </Container>
+            </div>
+
+            
+            
             {/* slice of Images */}
-            <Row className="mx-auto">
-              <ImageCarousel
-                images={
-                  !!data.imageCarousel && Array.isArray(data.imageCarousel.images)
-                    ? data.imageCarousel.images
-                    : []
-                }
-              />
-            </Row>
+            <div style ={{backgroundColor:"#f0f0f0"}}>
+              <div>
+              <Row className="my-5 d-flex justify-content-center">
+                <ImageCarousel
+                  images={
+                    !!data.imageCarousel && Array.isArray(data.imageCarousel.images)
+                      ? data.imageCarousel.images
+                      : []
+                  }
+                />
+              </Row>
+              </div>
+            </div>
 
             {/* services in cards */}
             <Row className="my-5 d-flex justify-content-center">
@@ -145,26 +192,26 @@ function Index() {
             </Row>
 
             {/* Text of the Download the App */}
-            <Row className="my-5 pb-5">
+            {/* <Row className="my-5 pb-5">
               <Col className="my-5 pb-5">
                 <div className="text-center">
-                  {!!data.downloadTextBlock && (
-                    <TextBlock
-                      id={data.downloadTextBlock.id}
-                      title={data.downloadTextBlock.title}
-                      titlecolor={data.downloadTextBlock.titlecolor}
-                      subtitle={data.downloadTextBlock.subtitle}
-                      content={data.downloadTextBlock.content}
-                      buttons={data.downloadTextBlock.buttons}
-                    />
-                  )}
+                  {!!data.featured && (
+                      <TextBlock
+                        id={data.featured.id}
+                        title={data.featured.title}
+                        titlecolor={data.featured.titlecolor}
+                        subtitle={data.featured.subtitle}
+                        content={data.featured.content}
+                        // buttons={data.featured.buttons}
+                      />
+                    )}
                 </div>
               </Col>
-            </Row>
+            </Row> */}
 
-            {/* Image of the table */}
+            {/* Image of the table
             <Row className="className=my-5 d-flex justify-content-center">
-              {/* <Images /> */}
+              <Images />
               {!!data.sideImage && (
                 <div className="section section-images my-5">
                   <Container>
@@ -178,27 +225,12 @@ function Index() {
                   </Container>
                 </div>
               )}
-            </Row>
+            </Row> */}
 
             {/* Download Buttons */}
-            <Row className="my-5 d-flex justify-content-center">
-              {!!data.downloadImageButtons &&
-                Array.isArray(data.downloadImageButtons) &&
-                data.downloadImageButtons.map((item) => {
-                  return (
-                    <a href={item.link} target="_blank" rel="noreferrer" key={item.id}>
-                      <img
-                        src={item.image.url}
-                        style={{ height: '60px', margin: '20px' }}
-                        alt={item.image.alternativeText}
-                      />
-                    </a>
-                  );
-                })}
-            </Row>
           </div>
           {/* <Download /> */}
-        </Container>
+        </div>
         <DarkFooter />
       </div>
     </>

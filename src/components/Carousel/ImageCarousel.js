@@ -57,7 +57,7 @@ function ImageCarousel({ images }) {
 
   return (
     <>
-      <div className="section" id="carousel">
+      <div className="section" id="carousel" style ={{backgroundColor:"#f0f0f0"}}>
         <Container>
           <Row className="justify-content-center">
             <Col lg="12" md="12">
