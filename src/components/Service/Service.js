@@ -2,8 +2,6 @@ import React from 'react';
 import {
   Card,
   CardBody,
-  //CardLink,
-  //CardSubtitle,
   CardText,
   CardTitle
 } from 'reactstrap';
@@ -19,9 +17,6 @@ const Service = ({ title, nucleoIcon, description }) => {
               {title}
             </CardTitle>
           )}
-          {/* <CardSubtitle className="mb-2 text-muted">
-            Card subtitle
-          </CardSubtitle> */}
           {!!description && <CardText>{description}</CardText>}
         </CardBody>
       </Card>

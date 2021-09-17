@@ -11,6 +11,8 @@ import {
   Container
 } from 'reactstrap';
 
+
+
 function IndexNavbar() {
   const hash = window.location.hash;
   const [navbarColor, setNavbarColor] = React.useState('navbar-transparent');
@@ -42,7 +44,8 @@ function IndexNavbar() {
           }}
         />
       ) : null}
-      <Navbar className={'fixed-top ' + navbarColor} expand="lg" color="info">
+      
+      <Navbar className={'fixed-top ' + navbarColor} expand="lg" color="dark" >
         <Container>
           <div className="navbar-translate">
             <NavbarBrand href="/" id="navbar-brand">
@@ -67,112 +70,46 @@ function IndexNavbar() {
               <span className="navbar-toggler-bar bottom-bar"></span>
             </button>
           </div>
+
+
           <Collapse className="justify-content-end" isOpen={collapseOpen} navbar>
+
             <Nav navbar>
+              {/* //Home   */}
               <NavItem active={!!hash && hash === '#/index'}>
                 <NavLink to="/index" tag={Link}>
-                  Home
+                  Inicio
                 </NavLink>
               </NavItem>
+
+              {/* //About Us */}
               <NavItem active={!!hash && hash === '#/about'}>
                 <NavLink to="/about" tag={Link}>
-                  About Us
+                  Sobre Nosotros
                 </NavLink>
               </NavItem>
+
+              
               <NavItem active={!!hash && hash === '#/faq'}>
                 <NavLink to="/faq" tag={Link}>
-                  Frequent Questions
+                  preguntas frecuentes
                 </NavLink>
               </NavItem>
+              
+              {/* Contact Us */}
               <NavItem active={!!hash && hash === '#/contact'}>
                 <NavLink to="/contact" tag={Link}>
-                  Contact Us
+                  contactanos
                 </NavLink>
               </NavItem>
+
+              {/* //Terms and Conditions */}
               <NavItem active={!!hash && hash === '#/terms-and-conditions'}>
                 <NavLink to="/terms-and-conditions" tag={Link}>
-                  Terms and Conditions
+                  terminos y condiciones
                 </NavLink>
               </NavItem>
-              {/* <UncontrolledDropdown nav>
-                <DropdownToggle
-                  caret
-                  color="default"
-                  href="#pablo"
-                  nav
-                  onClick={(e) => e.preventDefault()}
-                >
-                  <i className="now-ui-icons design_app mr-1"></i>
-                  <p>Components</p>
-                </DropdownToggle>
-                <DropdownMenu>
-                  <DropdownItem to="/index" tag={Link}>
-                    <i className="now-ui-icons business_chart-pie-36 mr-1"></i>
-                    All components
-                  </DropdownItem>
-                  <DropdownItem
-                    href="https://demos.creative-tim.com/now-ui-kit-react/#/documentation/introduction?ref=nukr-index-navbar"
-                    target="_blank"
-                  >
-                    <i className="now-ui-icons design_bullet-list-67 mr-1"></i>
-                    Documentation
-                  </DropdownItem>
-                </DropdownMenu>
-              </UncontrolledDropdown> */}
-              {/* <NavItem>
-                <Button
-                  className="nav-link btn-neutral"
-                  color="info"
-                  href="https://www.creative-tim.com/product/now-ui-kit-pro-react?ref=nukr-index-navbar"
-                  id="upgrade-to-pro"
-                  target="_blank"
-                >
-                  <i className="now-ui-icons arrows-1_share-66 mr-1"></i>
-                  <p>Upgrade to PRO</p>
-                </Button>
-                <UncontrolledTooltip target="#upgrade-to-pro">
-                  Cooming soon!
-                </UncontrolledTooltip>
-              </NavItem> */}
-              {/* <NavItem>
-                <NavLink
-                  href="https://twitter.com/CreativeTim?ref=creativetim"
-                  target="_blank"
-                  id="twitter-tooltip"
-                >
-                  <i className="fab fa-twitter"></i>
-                  <p className="d-lg-none d-xl-none">Twitter</p>
-                </NavLink>
-                <UncontrolledTooltip target="#twitter-tooltip">
-                  Follow us on Twitter
-                </UncontrolledTooltip>
-              </NavItem>
-              <NavItem>
-                <NavLink
-                  href="https://www.facebook.com/CreativeTim?ref=creativetim"
-                  target="_blank"
-                  id="facebook-tooltip"
-                >
-                  <i className="fab fa-facebook-square"></i>
-                  <p className="d-lg-none d-xl-none">Facebook</p>
-                </NavLink>
-                <UncontrolledTooltip target="#facebook-tooltip">
-                  Like us on Facebook
-                </UncontrolledTooltip>
-              </NavItem>
-              <NavItem>
-                <NavLink
-                  href="https://www.instagram.com/CreativeTimOfficial?ref=creativetim"
-                  target="_blank"
-                  id="instagram-tooltip"
-                >
-                  <i className="fab fa-instagram"></i>
-                  <p className="d-lg-none d-xl-none">Instagram</p>
-                </NavLink>
-                <UncontrolledTooltip target="#instagram-tooltip">
-                  Follow us on Instagram
-                </UncontrolledTooltip>
-              </NavItem> */}
+
             </Nav>
           </Collapse>
         </Container>

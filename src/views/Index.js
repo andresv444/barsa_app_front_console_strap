@@ -52,28 +52,68 @@ function Index() {
 
   return (
     <>
+      {/* navbar Menu */}
       <IndexNavbar />
       <div className="wrapper">
+        {/* Image Background bar */}
         <IndexHeader image={!!data.coverImage ? data.coverImage.url : null} />
-        <div className="main">
-          <Container>
-            <Row className="my-5">
-              <Col>
-                <div className="text-center">
-                  {!!data.featured && (
-                    <TextBlock
-                      id={data.featured.id}
-                      title={data.featured.title}
-                      titlecolor={data.featured.titlecolor}
-                      subtitle={data.featured.subtitle}
-                      content={data.featured.content}
-                      buttons={data.featured.buttons}
+
+        <Container className="main">
+          <div>
+            {/* Text and image of app */}
+            <Container className="background-1" style ={{backgroundColor:"yellow"}}>
+              <Row className="my-5 d-flex justify-content-center">
+                <Col xs="6">
+                  {/* text and title */}
+                  <div className="text-center">
+                    {!!data.featured && (
+                      <TextBlock
+                        id={data.featured.id}
+                        title={data.featured.title}
+                        titlecolor={data.featured.titlecolor}
+                        subtitle={data.featured.subtitle}
+                        content={data.featured.content}
+                        // buttons={data.featured.buttons}
+                      />
+                    )}
+
+                    {/* button of download */}
+                    <Row className="my-5 d-flex justify-content-center">
+                      {!!data.downloadImageButtons &&
+                        Array.isArray(data.downloadImageButtons) &&
+                        data.downloadImageButtons.map((item) => {
+                          return (
+                            <a
+                              href={item.link}
+                              target="_blank"
+                              rel="noreferrer"
+                              key={item.id}
+                            >
+                              <img
+                                src={item.image.url}
+                                style={{ height: '45px', margin: '15px' }}
+                                alt={item.image.alternativeText}
+                              />
+                            </a>
+                          );
+                        })}
+                    </Row>
+                  </div>
+                </Col>
+                {/* Image of the app */}
+                <Col xs="6">
+                  <div>
+                    <img
+                      src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/drizly-app-1579716002.jpg?crop=1xw:1xh;center,top&resize=768:*"
+                      alt=""
                     />
-                  )}
-                </div>
-              </Col>
-            </Row>
-            <Row className="my-5">
+                  </div>
+                </Col>
+              </Row>
+            </Container>
+
+            {/* slice of Images */}
+            <Row className="mx-auto">
               <ImageCarousel
                 images={
                   !!data.imageCarousel && Array.isArray(data.imageCarousel.images)
@@ -82,6 +122,8 @@ function Index() {
                 }
               />
             </Row>
+
+            {/* services in cards */}
             <Row className="my-5 d-flex justify-content-center">
               {!!data.services &&
                 Array.isArray(data.services) &&
@@ -101,6 +143,8 @@ function Index() {
                   </Card>
                 ))}
             </Row>
+
+            {/* Text of the Download the App */}
             <Row className="my-5 pb-5">
               <Col className="my-5 pb-5">
                 <div className="text-center">
@@ -117,7 +161,9 @@ function Index() {
                 </div>
               </Col>
             </Row>
-            <Row className="my-5">
+
+            {/* Image of the table */}
+            <Row className="className=my-5 d-flex justify-content-center">
               {/* <Images /> */}
               {!!data.sideImage && (
                 <div className="section section-images my-5">
@@ -133,6 +179,8 @@ function Index() {
                 </div>
               )}
             </Row>
+
+            {/* Download Buttons */}
             <Row className="my-5 d-flex justify-content-center">
               {!!data.downloadImageButtons &&
                 Array.isArray(data.downloadImageButtons) &&
@@ -148,9 +196,9 @@ function Index() {
                   );
                 })}
             </Row>
-          </Container>
+          </div>
           {/* <Download /> */}
-        </div>
+        </Container>
         <DarkFooter />
       </div>
     </>

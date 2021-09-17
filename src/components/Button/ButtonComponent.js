@@ -3,7 +3,7 @@ import { Button } from 'reactstrap';
 
 const ButtonComponent = ({ id, title, href, icon, color, style, size }) => {
   //console.log(id, title, href, icon, color, style, size );
-  let className = 'mr-1';
+  let className = 'mr-1 btn-warning';
   let props = {
     id,
     href
