@@ -49,12 +49,14 @@ function AboutPage() {
     return <Loading />;
   }
 
+  // const textBlockI1 = data.content[0]
+  // const textBlockI2 = data.content[1]
+
   return (
     <>
       {/* Navbar */}
       <PagesNavbar />
       <div className="wrapper">
-
         <PageHeader
           title="About Us"
           subtitle={!!data.subtitle ? data.subtitle : ''}
@@ -83,50 +85,84 @@ function AboutPage() {
                     ></div>
                   )}
                 </Col>
-                <Col md="6" className="mt-5">
-                  {!!data.image3 && (
-                    <div
-                      className="image-container image-right"
-                      style={{
-                        backgroundImage: 'url(' + data.image3.url + ')'
-                      }}
-                    ></div>
-                  )}
-                  <div style={{ marginTop: '250px' }} />
+
+                <Col
+                  md="6"
+                  className="mt-5"
+                  style={{ display: 'grid', alignItems: 'center' }}
+                >
+                  <div>
+                      {/* <h1>
+                        Nuestra Mision
+                      </h1> */}
+
+                    {!!data.image3 && (
+                      <div
+                        className="image-container image-right"
+                        style={{
+                          backgroundImage: 'url(' + data.image3.url + ')'
+                        }}
+                      ></div>
+                    )}
+                  </div>
+                  <div style={{ marginTop: '50px' }} />
+                  {/* <div style={{ marginTop: '250px' }} /> */}
                   {!!data.mission && (
-                    <TextBlock
-                      id={data.mission.id}
-                      title={data.mission.title}
-                      titlecolor={data.mission.titlecolor}
-                      subtitle={data.mission.subtitle}
-                      content={data.mission.content}
-                      buttons={data.mission.buttons}
-                    />
+                    <div>
+                      <TextBlock
+                        id={data.mission.id}
+                        title={'Nuestra Mison'}
+                        titlecolor={data.mission.titlecolor}
+                        subtitle={data.mission.subtitle}
+                        content={data.mission.content}
+                        buttons={[
+                          {
+                            color: 'neutral',
+                            style: 'round',
+                            size: 'large',
+                            _id: '60f0545154a45f4f585acb79',
+                            title: 'Inicio',
+                            href: '#/',
+                            __v: 0,
+                            id: '60f0545154a45f4f585acb79'
+                          }
+                        ]}
+                      />
+                    </div>
                   )}
                 </Col>
               </Row>
               <Row>
-                <Col md="12" className="ml-5 text-center">
-                  {!!data.content &&
-                    Array.isArray(data.content) &&
-                    data.content.map((textBlock) => {
-                      if (textBlock['__component'] === 'page.text-block') {
-                        return (
+                {!!data.content &&
+                  Array.isArray(data.content) &&
+                  data.content.map((textBlock) => {
+                    if (textBlock['__component'] === 'page.text-block') {
+                      return (
+                        <Col md="6" className="text-left">
                           <TextBlock
-                            key={textBlock.id}
-                            id={textBlock.id}
-                            title={textBlock.title}
+                            // key={textBlock.id}
+                            // id={textBlock.id}
+                            title={'Nuestra mision'}
                             titlecolor={textBlock.titlecolor}
                             subtitle={textBlock.subtitle}
                             content={textBlock.content}
-                            buttons={textBlock.buttons}
                           />
-                        );
-                      } else {
-                        return null;
-                      }
-                    })}
-                </Col>
+                        </Col>
+                      );
+                    } else {
+                      return null;
+                    }
+                  })}
+                {/* <Col md="12" className="ml-5 text-center">
+                  <TextBlock
+                    // key={textBlock.id}
+                    // id={textBlock.id}
+                    title={'Nuestra mision'}
+                    titlecolor={textBlockI1.titlecolor}
+                    subtitle={textBlockI1.subtitle}
+                    content={textBlockI1.content}
+                  />
+                </Col> */}
               </Row>
             </div>
           </Container>

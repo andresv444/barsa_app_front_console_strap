@@ -196,7 +196,7 @@ function Index() {
             {/* Text of the Download the App */}
             <div style ={{backgroundColor:"#f0f0f0"}} >
             <Container >
-            <Row className="my-5 pb-5">
+            <Row className=" pb-5">
               <Col className="my-5 pb-5">
                 <div className="text-center">
                   {!!data.featured && (

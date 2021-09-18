@@ -11,7 +11,7 @@ const ButtonComponent = ({ id, title, href, icon, color, style, size }) => {
   if (size === 'small') props['size'] = 'sm';
   if (size === 'large') props['size'] = 'lg';
   if (color === 'neutral') {
-    className = 'btn-neutral';
+    className = 'btn-danger';
     props['color'] = 'default';
   } else {
     props['color'] = color;
