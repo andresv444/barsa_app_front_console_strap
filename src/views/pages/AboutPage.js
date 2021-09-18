@@ -111,7 +111,7 @@ function AboutPage() {
                     <div>
                       <TextBlock
                         id={data.mission.id}
-                        title={'Nuestra Mison'}
+                        title={'Nuestra Mision'}
                         titlecolor={data.mission.titlecolor}
                         subtitle={data.mission.subtitle}
                         content={data.mission.content}
@@ -142,7 +142,7 @@ function AboutPage() {
                           <TextBlock
                             // key={textBlock.id}
                             // id={textBlock.id}
-                            title={'Nuestra mision'}
+                            title={'Nuestra Vision'}
                             titlecolor={textBlock.titlecolor}
                             subtitle={textBlock.subtitle}
                             content={textBlock.content}

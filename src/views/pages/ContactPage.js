@@ -65,16 +65,16 @@ function ContactPage() {
       <PagesNavbar />
       <div className="wrapper">
         <PageHeader
-          title="Contact Us"
-          subtitle={!!data.subtitle ? data.subtitle : ''}
-          headline={!!data.headline ? data.headline : ''}
+          title="Contactanos"
+          subtitle={"BAR-SA"}
+          headline={'Ponte en contacto y cuéntanos cómo podemos ayudarte'}
         />
-        <div className="section">
-          <Container>
+        <div className="section" style={{padding:'0'}}>
+          <div>
             {/* <Row> */}
-            <div className="section section-contact-us text-center">
+            <div className="section section-contact-us text-center" style={{padding:'0'}}>
               <Container>
-                {!!data.title && <h2 className="title">{data.title}</h2>}
+                {!!data.title && <h2 className="title" >Te Quieres Conectar?</h2>}
                 {!!data.description && <ReactMarkdown>{data.description}</ReactMarkdown>}
                 <Row>
                   <Col className="text-center ml-auto mr-auto" lg="6" md="8">
@@ -149,7 +149,7 @@ function ContactPage() {
               </Container>
             </div>
             {/* </Row> */}
-          </Container>
+          </div>
         </div>
         <DefaultFooter />
       </div>
