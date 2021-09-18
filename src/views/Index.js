@@ -106,7 +106,7 @@ function Index() {
                   </div>
                 </Col>
                 {/* Image of the app */}
-                <Col xs = '12' sm = "12">
+                <Col xs = '12' sm = "12" md = '6'>
                   <div>
                     <img
                       src="images/iphone-removebg.png"
@@ -124,7 +124,7 @@ function Index() {
 
               {/* Image of the app */}
               <Row className="my-5 d-flex justify-content-center">
-                <Col xs = '10'sm = "12">
+                <Col xs = '10'sm = "12" md = '6'>
                   <div>
                     <img
                       src="https://products2.imgix.drizly.com/homepage_you_want_it_we_got_it.png?auto=format%2Ccompress&ch=Width%2CDPR&fm=png&q=75&w=1340"
@@ -141,7 +141,7 @@ function Index() {
                       id={data.downloadTextBlock.id}
                       title='You want it? We got it.'
                       titlecolor={'black1'}
-                      subtitle='WE HAVE EVERY LICOR DO YOU WANT'
+                      subtitle='WE HAVE EVERY LICOR, DO YOU WANT ...'
                       content="Rosé? Check. Tito's? Check. That one killer pale ale you tried the other day? Check. We have the biggest selection for on-demand alcohol in the history of ever."
                       buttons={data.downloadTextBlock.buttons}
                     />
