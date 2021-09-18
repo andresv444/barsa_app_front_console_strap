@@ -68,7 +68,7 @@ function Index() {
             <div style ={{backgroundColor:"#f0f0f0"}}>
             <Container className="background-1" >
               <Row className="py-4 d-flex justify-content-center">
-                <Col xs="6" md = '6' sm = "12">
+                <Col xs="10" md = '6' sm = "12">
                   {/* text and title */}
                   <div className="text-center" >
                   {!!data.downloadTextBlock && (
@@ -106,7 +106,7 @@ function Index() {
                   </div>
                 </Col>
                 {/* Image of the app */}
-                <Col xs="6" md = '6' sm = "12">
+                <Col xs = '12' sm = "12">
                   <div>
                     <img
                       src="images/iphone-removebg.png"
@@ -124,7 +124,7 @@ function Index() {
 
               {/* Image of the app */}
               <Row className="my-5 d-flex justify-content-center">
-                <Col xs="6" md = '6' sm = "12">
+                <Col xs = '10'sm = "12">
                   <div>
                     <img
                       src="https://products2.imgix.drizly.com/homepage_you_want_it_we_got_it.png?auto=format%2Ccompress&ch=Width%2CDPR&fm=png&q=75&w=1340"
@@ -134,7 +134,7 @@ function Index() {
                 </Col>
                 
                 {/* text and title */}
-                <Col xs="6" md = '6' sm = "12">
+                <Col xs="10" md = '6' sm = "12">
                   <div className="text-center">
                   {!!data.downloadTextBlock && (
                     <TextBlock
