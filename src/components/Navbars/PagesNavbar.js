@@ -54,7 +54,7 @@ function IndexNavbar() {
           <div className="navbar-translate">
             <NavbarBrand href="/" id="navbar-brand">
               <img
-                style={{ width: '60px' }}
+                style={{ width: '125px' }}
                 src={process.env.PUBLIC_URL + '/logo.png'}
                 alt="bar-sa-logo"
               />

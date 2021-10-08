@@ -152,6 +152,7 @@ function Index() {
               </Row>
             </Container>
             </div>
+            
 
             
             
@@ -214,23 +215,6 @@ function Index() {
             </Row>
             </Container>
             </div>
-            {/* Image of the table
-            <Row className="className=my-5 d-flex justify-content-center">
-              <Images />
-              {!!data.sideImage && (
-                <div className="section section-images my-5">
-                  <Container>
-                    <Row className="my-4">
-                      <Col md="12">
-                        <div className="hero-images-container">
-                          <img alt="..." src={data.sideImage.url}></img>
-                        </div>
-                      </Col>
-                    </Row>
-                  </Container>
-                </div>
-              )}
-            </Row> */}
 
             {/* Download Buttons */}
           </div>

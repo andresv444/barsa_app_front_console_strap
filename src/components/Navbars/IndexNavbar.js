@@ -18,25 +18,6 @@ function IndexNavbar() {
   const [navbarColor, setNavbarColor] = React.useState('');
   // const [navbarColor, setNavbarColor] = React.useState('danger');
   const [collapseOpen, setCollapseOpen] = React.useState(false);
-  // setNavbarColor('');
-
-  // React.useEffect(() => {
-  //   const updateNavbarColor = () => {
-  //     if (document.documentElement.scrollTop > 1 || document.body.scrollTop > 1) {
-  //       setNavbarColor('');
-  //     } else if (
-  //       document.documentElement.scrollTop < 400 ||
-  //       document.body.scrollTop < 400
-  //     ) {
-  //       setNavbarColor('navbar-transparent');
-  //       // setNavbarColor('danger');
-  //     }
-  //   };
-  //   window.addEventListener('scroll', updateNavbarColor);
-  //   return function cleanup() {
-  //     window.removeEventListener('scroll', updateNavbarColor);
-  //   };
-  // });
   return (
     <>
       {collapseOpen ? (
@@ -52,9 +33,10 @@ function IndexNavbar() {
       <Navbar className={'fixed-top ' + navbarColor} expand="lg" color="light" light = {true} >
         <Container>
           <div className="navbar-translate">
+            {/* <div> */}
             <NavbarBrand href="/" id="navbar-brand">
               <img
-                style={{ width: '60px' }}
+                style={{ width: '125px' }}
                 src={process.env.PUBLIC_URL + '/logo.png'}
                 alt="bar-sa-logo"
               />
@@ -68,6 +50,7 @@ function IndexNavbar() {
               }}
               aria-expanded={collapseOpen}
               type="button"
+              color = "red"
             >
               <span className="navbar-toggler-bar top-bar"></span>
               <span className="navbar-toggler-bar middle-bar"></span>
